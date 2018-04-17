@@ -15,7 +15,7 @@
     },
     "content_scripts": [
         {
-            "matches": [ "http://i.cnblogs.com/EditPosts.aspx*" ],
+            "matches": [ "https://i.cnblogs.com/EditPosts.aspx*" ],
             "js": [ "jquery-2.0.0.min.js", "content_script.js" ]
         }
     ],

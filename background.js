@@ -1,8 +1,8 @@
-/********************************************************************************
-** ×÷Õß£º ÔÚÂ·ÉÏµÄÕÅ(www.cnblogs.com/gotop)
-** ´´Ê¼Ê±¼ä£º2016-6-12
-** ÃèÊö£º
-**    chrome²å¼şºóÌ¨ÔËĞĞÖ÷³ÌĞò
+ï»¿/********************************************************************************
+** ä½œè€…ï¼š åœ¨è·¯ä¸Šçš„å¼ (www.cnblogs.com/gotop)
+** åˆ›å§‹æ—¶é—´ï¼š2016-6-12
+** æè¿°ï¼š
+**    chromeæ’ä»¶åå°è¿è¡Œä¸»ç¨‹åº
 *********************************************************************************/
 chrome.tabs.onUpdated.addListener(checkForValidUrl);
 
@@ -40,7 +40,7 @@ function checkForValidUrl(tabId, changeInfo, tab) {
 	 }
 };
 
-//var wR = chrome.webRequest || chrome.experimental.webRequest; //¼æÈİ17Ö®Ç°°æ±¾µÄchrome£¬ÈôĞèÒªÊ¹ÓÃchrome.experimental£¬ĞèÒªÔÚ about:flags ÖĞ¡°ÆôÓÃ¡°ÊµÑéÓÃ¡£¡£API¡±
+//var wR = chrome.webRequest || chrome.experimental.webRequest; //å…¼å®¹17ä¹‹å‰ç‰ˆæœ¬çš„chromeï¼Œè‹¥éœ€è¦ä½¿ç”¨chrome.experimentalï¼Œéœ€è¦åœ¨ about:flags ä¸­â€œå¯ç”¨â€œå®éªŒç”¨ã€‚ã€‚APIâ€
 //if (wR) {
 //    wR.onBeforeSendHeaders.addListener(
 //        function (details) {
@@ -53,13 +53,13 @@ function checkForValidUrl(tabId, changeInfo, tab) {
 //                        break;
 //                    }
 //                }
-//                if (!exists) {//²»´æÔÚ Referer ¾ÍÌí¼Ó
+//                if (!exists) {//ä¸å­˜åœ¨ Referer å°±æ·»åŠ 
 //                    details.requestHeaders.push({ name: 'Referer', value: 'http://www.jianshu.com/writer' });
 //                }
 //                return { requestHeaders: details.requestHeaders };
 //            }
 //        },
-//        { urls: ["http://*.jianshu.com/writer*", "https://*.jianshu.com/writer*", "http://*.cnblogs.com/*"] },//Æ¥Åä·ÃÎÊµÄÄ¿±êurl
+//        { urls: ["http://*.jianshu.com/writer*", "https://*.jianshu.com/writer*", "http://*.cnblogs.com/*"] },//åŒ¹é…è®¿é—®çš„ç›®æ ‡url
 //        ["blocking", "requestHeaders"]
 //    );
 //}
@@ -94,7 +94,7 @@ function upload(blobOrFile, fileName, oldUrl,sender) {
             //console.log(responseData);
             var data =JSON.parse(responseData);
             if (data.success) {
-                //data.message  ÎªÉÏ´«³É¹¦µÄÍ¼Æ¬µØÖ·
+                //data.message  ä¸ºä¸Šä¼ æˆåŠŸçš„å›¾ç‰‡åœ°å€
                 SendReplaceEditorText(oldUrl, data.message,sender);
             }
         }
@@ -161,9 +161,9 @@ function getPicMimeType(fileName)
 }
 
 /** 
-*@param {string} url ÍêÕûµÄURLµØÖ· 
-*@returns {object} ×Ô¶¨ÒåµÄ¶ÔÏó 
-*@description ÓÃ·¨Ê¾Àı£ºvar myURL = parseURL('http://abc.com:8080/dir/index.html?id=255&m=hello#top');
+*@param {string} url å®Œæ•´çš„URLåœ°å€ 
+*@returns {object} è‡ªå®šä¹‰çš„å¯¹è±¡ 
+*@description ç”¨æ³•ç¤ºä¾‹ï¼švar myURL = parseURL('http://abc.com:8080/dir/index.html?id=255&m=hello#top');
 myURL.file='index.html' 
 myURL.hash= 'top' 
 myURL.host= 'abc.com' 
