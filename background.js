@@ -34,7 +34,7 @@ function checkForValidUrl(tabId, changeInfo, tab) {
      /*if(getDomainFromUrl(tab.url).toLowerCase()=="www.cnblogs.com"){
           chrome.pageAction.show(tabId);
      }*/
-	 if(tab.url.indexOf("http://i.cnblogs.com/EditPosts.aspx")==0)
+	 if(tab.url.indexOf("https://i.cnblogs.com/EditPosts.aspx")==0)
 	 {
 		 chrome.pageAction.show(tabId);
 	 }
@@ -54,12 +54,12 @@ function checkForValidUrl(tabId, changeInfo, tab) {
 //                    }
 //                }
 //                if (!exists) {//不存在 Referer 就添加
-//                    details.requestHeaders.push({ name: 'Referer', value: 'http://www.jianshu.com/writer' });
+//                    details.requestHeaders.push({ name: 'Referer', value: 'https://www.jianshu.com/writer' });
 //                }
 //                return { requestHeaders: details.requestHeaders };
 //            }
 //        },
-//        { urls: ["http://*.jianshu.com/writer*", "https://*.jianshu.com/writer*", "http://*.cnblogs.com/*"] },//匹配访问的目标url
+//        { urls: ["https://*.jianshu.com/writer*", "https://*.jianshu.com/writer*", "https://*.cnblogs.com/*"] },//匹配访问的目标url
 //        ["blocking", "requestHeaders"]
 //    );
 //}
@@ -83,7 +83,7 @@ function downloadFile(url, success,sender) {
 function upload(blobOrFile, fileName, oldUrl,sender) {
     //console.log(blobOrFile);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://upload.cnblogs.com/imageuploader/processupload?host=www.cnblogs.com&qqfile=' + fileName, true);
+    xhr.open('POST', 'https://upload.cnblogs.com/imageuploader/processupload?host=www.cnblogs.com&qqfile=' + fileName, true);
     xhr.onload = function (e) {
         var state = this.readyState;
         var responseCode = xhr.status;
@@ -163,7 +163,7 @@ function getPicMimeType(fileName)
 /** 
 *@param {string} url 完整的URL地址 
 *@returns {object} 自定义的对象 
-*@description 用法示例：var myURL = parseURL('http://abc.com:8080/dir/index.html?id=255&m=hello#top');
+*@description 用法示例：var myURL = parseURL('https://abc.com:8080/dir/index.html?id=255&m=hello#top');
 myURL.file='index.html' 
 myURL.hash= 'top' 
 myURL.host= 'abc.com' 
@@ -172,8 +172,8 @@ myURL.params= Object = { id: 255, m: hello }
 myURL.path= '/dir/index.html' 
 myURL.segments= Array = ['dir', 'index.html'] 
 myURL.port= '8080' 
-myURL.protocol= 'http' 
-myURL.source= 'http://abc.com:8080/dir/index.html?id=255&m=hello#top' 
+myURL.protocol= 'https' 
+myURL.source= 'https://abc.com:8080/dir/index.html?id=255&m=hello#top' 
 */
 function parseURL(url) {
     var a = document.createElement('a');

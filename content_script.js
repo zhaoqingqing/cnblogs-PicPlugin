@@ -33,7 +33,7 @@ $(function () {
 
 function GetMarkDownPic(md) {
     var pattern = /!\[(\S*)\]\((\S*)/g;
-    var imgPattern = /\((http:\/\/\S*)\)/;
+    var imgPattern = /\((https:\/\/\S*)\)/;
     str = md;
     var arr = str.match(pattern);
     if (arr) {
